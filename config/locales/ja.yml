@@ -200,3 +200,7 @@ ja:
       edit: "編集する"
       back: "一覧に戻る"
       destroy: "破棄する"
+    edit:
+      page_title: "編集"
+      back_to_show: "戻る"
+      back_to_index: "一覧に戻る"

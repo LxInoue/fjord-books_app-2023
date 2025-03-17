@@ -48,3 +48,7 @@ en:
       edit: "Edit this book"
       back: "Back to books"
       destroy: "Destroy this book"
+    edit:
+      page_title: "Editing book"
+      back_to_show: "Show this book"
+      back_to_index: "Back to books"
