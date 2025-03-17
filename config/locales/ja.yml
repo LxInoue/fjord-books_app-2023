@@ -33,3 +33,9 @@ ja:
   books:
     index:
       page_title: "書籍一覧"
+      title: "タイトル:"
+      memo: "メモ:"
+      author: "著者:"
+      picture: "イメージ:"
+      new_book: "書籍を追加"
+      show: "詳細を表示"
