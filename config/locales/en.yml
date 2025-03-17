@@ -31,11 +31,16 @@
 
 en:
   books:
+    common:
+      title: "Title"
+      memo: "Memo"
+      author: "Author"
+      picture: "Picture"
     index:
       page_title: "books"
-      title: "Title:"
-      memo: "Memo:"
-      author: "Author:"
-      picture: "Picture:"
       new_book: "New Book"
       show: "show this book"
+    new:
+      page_title: "New book"
+      back: "Back to books"
+      create_book: "Create Book"
