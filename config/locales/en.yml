@@ -52,3 +52,12 @@ en:
       page_title: "Editing book"
       back_to_show: "Show this book"
       back_to_index: "Back to books"
+
+  statuses:
+    create: "%{resource} was successfully created."
+    update: "%{resource} was successfully updated."
+    destroy: "%{resource} was successfully destroyed."
+
+  errors:
+    error: error
+    failed: prohibited this book from being saved

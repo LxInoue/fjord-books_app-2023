@@ -182,6 +182,10 @@ ja:
       short: "%m/%d %H:%M"
     pm: 午後
 
+  activerecord:
+    models:
+      book: 本
+
   books:
     common:
       title: "タイトル"
@@ -204,3 +208,12 @@ ja:
       page_title: "編集"
       back_to_show: "戻る"
       back_to_index: "一覧に戻る"
+
+  statuses:
+    create: "%{resource}の作成に成功しました"
+    update: "%{resource}の更新に成功しました"
+    destroy: "%{resource}の破棄に成功しました"
+
+  errors:
+    error: エラー
+    failed: この本は保存できませんでした
