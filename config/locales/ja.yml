@@ -44,3 +44,7 @@ ja:
       page_title: "新規作成"
       create_book: "作成"
       back: "一覧に戻る"
+    show:
+      edit: "編集する"
+      back: "一覧に戻る"
+      destroy: "破棄する"

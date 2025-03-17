@@ -44,3 +44,7 @@ en:
       page_title: "New book"
       back: "Back to books"
       create_book: "Create Book"
+    show:
+      edit: "Edit this book"
+      back: "Back to books"
+      destroy: "Destroy this book"
