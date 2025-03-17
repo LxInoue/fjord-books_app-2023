@@ -3,9 +3,9 @@
 <%= render "form", book: @book %>
 
 <br>
-<div>
+<nav class="page-nav">
   <%= button_to t("books.new.create_book") %>
-</div>
+</nav>
 
 <div>
   <%= link_to t('books.new.back'), books_path %>
