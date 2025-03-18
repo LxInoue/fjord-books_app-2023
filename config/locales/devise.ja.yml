@@ -1,0 +1,66 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        name: "名前"
+        postal_code: "郵便番号"
+        address: "住所"
+        introduction: "自己紹介"
+      models:
+        user: "ユーザー"
+  devise:
+    confirmations:
+      confirmed: "メールアドレスの確認が完了しました。"
+      send_instructions: "メールアドレス確認の手順を記載したメールを送信しました。"
+      send_paranoid_instructions: "もしメールアドレスが登録されている場合は、確認手順を記載したメールを送信しました。"
+    failure:
+      already_authenticated: "すでにログインしています。"
+      inactive: "アカウントが有効化されていません。"
+      invalid: "メールアドレスまたはパスワードが正しくありません。"
+      locked: "アカウントがロックされています。"
+      last_attempt: "アカウントがロックされるまであと1回です。"
+      not_found_in_database: "メールアドレスまたはパスワードが正しくありません。"
+      timeout: "セッションがタイムアウトしました。再度ログインしてください。"
+      unauthenticated: "ログインが必要です。"
+    mailer:
+      confirmation_instructions:
+        subject: "メールアドレス確認のご案内"
+      reset_password_instructions:
+        subject: "パスワードリセットのご案内"
+      unlock_instructions:
+        subject: "アカウントロック解除のご案内"
+    omniauth_callbacks:
+      failure: "%{kind}の認証に失敗しました。%{reason}"
+      success: "%{kind}アカウントによる認証に成功しました。"
+    passwords:
+      no_token: "パスワードリセットのトークンがありません。"
+      send_instructions: "パスワードリセットの手順を記載したメールを送信しました。"
+      send_paranoid_instructions: "もしメールアドレスが登録されている場合は、パスワードリセットの手順を記載したメールを送信しました。"
+      updated: "パスワードが正常に更新されました。"
+      updated_not_active: "パスワードが更新されましたが、アカウントはまだ有効化されていません。"
+    registrations:
+      destroyed: "アカウントを削除しました。"
+      signed_up: "アカウント登録が完了しました。"
+      signed_up_but_inactive: "アカウント登録が完了しましたが、有効化が必要です。確認メールをご確認ください。"
+      signed_up_but_locked: "アカウント登録が完了しましたが、アカウントがロックされています。"
+      signed_up_but_unconfirmed: "アカウント登録が完了しました。確認メールをご確認ください。"
+      update_needs_confirmation: "メールアドレスが変更されました。新しいメールアドレスを確認してください。"
+      updated: "アカウント情報が更新されました。"
+    sessions:
+      signed_in: "ログインしました。"
+      signed_out: "ログアウトしました。"
+      already_signed_out: "すでにログアウトしています。"
+    unlocks:
+      send_instructions: "アカウントロック解除の手順を記載したメールを送信しました。"
+      send_paranoid_instructions: "もしメールアドレスが登録されている場合は、アカウントロック解除の手順を記載したメールを送信しました。"
+      unlocked: "アカウントのロックが解除されました。"
+    errors:
+      messages:
+        already_confirmed: "すでに確認済みです。"
+        confirmation_period_expired: "確認期間が過ぎています。新しい確認メールを送信してください。"
+        expired: "このリンクの有効期限が切れています。新しいリンクをリクエストしてください。"
+        not_found: "見つかりませんでした。"
+        not_locked: "このアカウントはロックされていません。"
+        not_saved:
+          one: "1件のエラーのため、保存できませんでした。"
+          other: "%{count}件のエラーのため、保存できませんでした。"
