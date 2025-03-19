@@ -1,5 +1,7 @@
 ja:
   activerecord:
+    models:
+      user: "ユーザー"
     attributes:
       user:
         id: "ID"
@@ -9,8 +11,6 @@ ja:
         postal_code: "郵便番号"
         address: "住所"
         bio: "自己紹介"
-      models:
-        user: "ユーザー"
   devise:
     confirmations:
       confirmed: "メールアドレスの確認が完了しました。"
