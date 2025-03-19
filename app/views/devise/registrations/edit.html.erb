@@ -1,6 +1,5 @@
 <% if resource.errors.any? %>
   <div id="error_explanation">
-    <h2><%= resource.errors.count %>件のエラーが発生しました:</h2>
     <ul>
       <% resource.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -33,5 +32,5 @@
   <div class="actions">
     <%= f.submit t('helpers.submit.update') %>
   </div>
-  <%= link_to "戻る", users_path, class: "btn btn-secondary" %>
+  <%= link_to t('views.common.back', name: t('activerecord.models.user')), users_path, class: "btn btn-secondary" %>
 <% end %>
