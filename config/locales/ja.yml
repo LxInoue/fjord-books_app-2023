@@ -198,6 +198,7 @@ ja:
     navbar:
       sign_up: "アカウント登録"
       logged_in_as: "%{name} としてログイン中"
+      profile: "プロフィール"
       edit_profile: "プロフィール編集"
       login: "ログイン"
       logout: "ログアウト"
