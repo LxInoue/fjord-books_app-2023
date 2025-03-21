@@ -1,18 +1,18 @@
 <p style="color: green"><%= notice %></p>
 
-<h1><%= t('books.index.page_title') %></h1>
+<h1><%= t('views.common.page_title.index', name: Book.model_name.human) %></h1>
 
 <div id="books" class="index-items">
   <% @books.each do |book| %>
   <div class="index-item">
     <%= render book %>
     <p>
-      <%= link_to t('books.index.show'), book %>
+      <%= link_to t('views.common.actions.show'), book %>
     </p>
   </div>
   <% end %>
 </div>
 
 <nav class="page-nav">
-  <%= link_to t('books.index.new_book'), new_book_path %>
+  <%= link_to t('views.common.actions.new', name: Book.model_name.human), new_book_path %>
 </nav>

@@ -1,12 +1,14 @@
 <p style="color: green"><%= notice %></p>
 
+<h1><%= t('views.common.page_title.show', name: '') %></h1>
+
 <div class="show-item">
   <%= render @book %>
 </div>
 
 <nav class="page-nav">
-  <%= link_to t('books.show.edit'), edit_book_path(@book) %> |
-  <%= link_to t('views.common.back', name: t('books.index.page_title')), books_path %>
+  <%= link_to t('views.common.actions.edit'), edit_book_path(@book) %> |
+  <%= link_to t('views.common.back', name: t('views.common.page_title.index', name: Book.model_name.human)), books_path %>
 
-  <%= button_to t('books.show.destroy'), @book, method: :delete %>
+  <%= button_to t('views.common.actions.destroy'), @book, method: :delete %>
 </nav>

@@ -192,20 +192,16 @@ ja:
   views:
     common:
       back: "%{name}に戻る"
-  books:
-    index:
-      page_title: "書籍一覧"
-      new_book: "書籍を追加"
-      show: "詳細を表示"
-    new:
-      page_title: "新規作成"
-      create_book: "作成"
-    show:
-      page_title: "詳細"
-      edit: "編集する"
-      destroy: "破棄する"
-    edit:
-      page_title: "編集"
+      page_title:
+        index: "%{name}一覧"
+        show: "%{name}詳細"
+        new: "%{name}新規作成"
+        edit: "%{name}編集"
+      actions:
+        new: "%{name}を追加"
+        show: "詳細を表示"
+        edit: "編集する"
+        destroy: "破棄する"
 
   statuses:
     create: "%{resource}の作成に成功しました"
