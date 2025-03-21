@@ -30,28 +30,29 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  books:
+  activerecord:
+    models:
+      book: "Book"
+    attributes:
+      book:
+        title: "Title"
+        memo: "Memo"
+        author: "Author"
+        picture: "Picture"
+
+  views:
     common:
-      title: "Title"
-      memo: "Memo"
-      author: "Author"
-      picture: "Picture"
-    index:
-      page_title: "books"
-      new_book: "New Book"
-      show: "show this book"
-    new:
-      page_title: "New book"
-      back: "Back to books"
-      create_book: "Create Book"
-    show:
-      edit: "Edit this book"
-      back: "Back to books"
-      destroy: "Destroy this book"
-    edit:
-      page_title: "Editing book"
-      back_to_show: "Show this book"
-      back_to_index: "Back to books"
+      back: "Back to %{name}"
+      page_title:
+        index: "%{name}"
+        show: "%{name}"
+        new: "New %{name}"
+        edit: "Edit %{name}"
+      actions:
+        new: "New %{name}"
+        show: "Show %{name}"
+        edit: "Edit %{name}"
+        destroy: "Destroy %{name}"
 
   statuses:
     create: "%{resource} was successfully created."
@@ -59,5 +60,5 @@ en:
     destroy: "%{resource} was successfully destroyed."
 
   errors:
-    error: error
-    failed: prohibited this book from being saved
+    error: "Error"
+    failed: "Prohibited this %{resource} from being saved."
