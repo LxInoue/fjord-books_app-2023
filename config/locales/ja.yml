@@ -1,5 +1,13 @@
 ja:
   activerecord:
+    models:
+      book: 本
+    attributes:
+      book:
+        title: "タイトル"
+        memo: "メモ"
+        author: "著者"
+        picture: "イメージ"
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
@@ -182,16 +190,7 @@ ja:
       short: "%m/%d %H:%M"
     pm: 午後
 
-  activerecord:
-    models:
-      book: 本
-
   books:
-    common:
-      title: "タイトル"
-      memo: "メモ"
-      author: "著者"
-      picture: "イメージ"
     index:
       page_title: "書籍一覧"
       new_book: "書籍を追加"
