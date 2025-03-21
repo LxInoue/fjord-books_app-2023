@@ -5,6 +5,6 @@
 <br>
 
 <nav class="page-nav">
-  <%= link_to t('books.edit.back_to_show'), @book %> |
-  <%= link_to t('books.edit.back_to_index'), books_path %>
+  <%= link_to t('views.common.back', name: t('books.show.page_title')), @book %> |
+  <%= link_to t('views.common.back', name: t('books.index.page_title')), books_path %>
 </nav>

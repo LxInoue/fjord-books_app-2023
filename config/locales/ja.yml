@@ -189,7 +189,9 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
-
+  views:
+    common:
+      back: "%{name}に戻る"
   books:
     index:
       page_title: "書籍一覧"
@@ -198,15 +200,12 @@ ja:
     new:
       page_title: "新規作成"
       create_book: "作成"
-      back: "一覧に戻る"
     show:
+      page_title: "詳細"
       edit: "編集する"
-      back: "一覧に戻る"
       destroy: "破棄する"
     edit:
       page_title: "編集"
-      back_to_show: "戻る"
-      back_to_index: "一覧に戻る"
 
   statuses:
     create: "%{resource}の作成に成功しました"
