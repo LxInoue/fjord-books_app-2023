@@ -6,7 +6,7 @@
   <% @reports.each do |report| %>
     <%= render report %>
     <p>
-      <%= link_to "Show this report", report %>
+      <%= link_to t('views.common.show', name: Report.model_name.human), report %>
     </p>
   <% end %>
 </div>
