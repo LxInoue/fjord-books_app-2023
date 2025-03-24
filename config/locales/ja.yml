@@ -198,7 +198,7 @@ ja:
         new: "%{name}の新規作成"
         edit: "%{name}の編集"
       actions:
-        new: "%{name}を追加"
+        new: "追加する"
         show: "詳細を表示"
         edit: "編集する"
         destroy: "破棄する"

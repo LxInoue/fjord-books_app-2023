@@ -49,10 +49,10 @@ en:
         new: "New %{name}"
         edit: "Edit %{name}"
       actions:
-        new: "New %{name}"
-        show: "Show %{name}"
-        edit: "Edit %{name}"
-        destroy: "Destroy %{name}"
+        new: "New"
+        show: "Show"
+        edit: "Edit"
+        destroy: "Destroy"
 
   statuses:
     create: "%{resource} was successfully created."
