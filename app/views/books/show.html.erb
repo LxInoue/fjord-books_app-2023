@@ -14,10 +14,10 @@
 <h3>コメント</h3>
 <%= form_with(model: [@book, Comment.new], local: true) do |form| %>
   <div>
-    <%= form.text_area :content, required: true, placeholder: "コメントを入力してください" %>
+    <%= form.text_area :content, required: true, placeholder: t('views.comments.placeholder') %>
   </div>
   <div>
-    <%= form.submit "コメントを投稿する" %>
+    <%= form.submit t('views.comments.submit_button') %>
   </div>
 <% end %>
 

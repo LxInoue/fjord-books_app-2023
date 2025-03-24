@@ -202,6 +202,9 @@ ja:
       previous: '‹ 前'
       next: '次 ›'
       truncate: '…'
+    comments:
+      placeholder: "コメントを入力してください"
+      submit_button: "コメントを投稿する"
   controllers:
     common:
       notice_create: "%{name}が作成されました。"
