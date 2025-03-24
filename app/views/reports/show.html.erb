@@ -6,3 +6,25 @@
 
   <%= button_to t('views.common.destroy', name: Report.model_name.human), @report, method: :delete %>
 </div>
+
+<h3><%= Comment.model_name.human %></h3>
+<%= form_with(model: [@report, Comment.new], local: true) do |form| %>
+  <div>
+    <%= form.text_area :content, required: true, placeholder: t('views.comments.placeholder') %>
+  </div>
+  <div>
+    <%= form.submit t('views.comments.submit_button') %>
+  </div>
+<% end %>
+
+<ul>
+  <% @report.comments.each do |comment| %>
+    <li>
+      <strong><%= comment.user.name.presence || comment.user.email %></strong> (投稿日時: <%= comment.created_at.strftime(t('time.formats.long')) %>)
+      <p><%= comment.content %></p>
+      <% if comment.user == current_user %>
+        <%= button_to t('views.common.destroy', name: Comment.model_name.human), report_comment_path(@report, comment), method: :delete %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
