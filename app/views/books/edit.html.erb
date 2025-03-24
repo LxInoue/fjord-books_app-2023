@@ -1,10 +1,10 @@
-<h1><%= t('views.common.page_title.edit', name: '') %></h1>
+<h1><%= t('views.common.page_title.edit', name: Book.model_name.human) %></h1>
 
 <%= render "form", book: @book %>
 
 <br>
 
 <nav class="page-nav">
-  <%= link_to t('views.common.back', name: t('views.common.page_title.show', name: '')), @book %> |
+  <%= link_to t('views.common.back', name: t('views.common.page_title.show', name: Book.model_name.human)), @book %> |
   <%= link_to t('views.common.back', name: t('views.common.page_title.index', name: Book.model_name.human)), books_path %>
 </nav>

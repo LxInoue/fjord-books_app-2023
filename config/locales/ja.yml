@@ -193,10 +193,10 @@ ja:
     common:
       back: "%{name}に戻る"
       page_title:
-        index: "%{name}一覧"
-        show: "%{name}詳細"
-        new: "%{name}新規作成"
-        edit: "%{name}編集"
+        index: "%{name}の一覧"
+        show: "%{name}の詳細"
+        new: "%{name}の新規作成"
+        edit: "%{name}の編集"
       actions:
         new: "%{name}を追加"
         show: "詳細を表示"
