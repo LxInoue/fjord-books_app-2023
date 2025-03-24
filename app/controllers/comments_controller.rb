@@ -27,8 +27,13 @@ class CommentsController < ApplicationController
   private
 
   def set_commentable
-    resource, id = request.path.split('/')[1, 2]
-    @commentable = resource.singularize.classify.constantize.find(id)
+    if params[:book_id]
+      @commentable = Book.find(params[:book_id])
+    elsif params[:report_id]
+      @commentable = Report.find(params[:report_id])
+    else
+      redirect_to root_path, alert: t('controllers.comments.alert_no_commentable')
+    end
   end
 
   def comment_params
