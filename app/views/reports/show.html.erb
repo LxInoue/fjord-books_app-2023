@@ -16,3 +16,18 @@
     <%= button_to t('views.common.destroy', name: Report.model_name.human.downcase), @report, method: :delete %>
   <% end %>
 </nav>
+
+<h2><%= t('shared.mentions.title') %></h2>
+<% if @report.mentioned_reports.any? %>
+  <ul>
+    <% @report.mentioned_reports.each do |mentioning_report| %>
+      <li>
+        <%= link_to mentioning_report.title, report_path(mentioning_report) %>
+        <%= t('shared.mentions.created_on', date: mentioning_report.created_at.to_date) %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p><%= t('shared.mentions.no_mentions') %></p>
+<% end %>
+
