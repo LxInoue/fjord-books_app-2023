@@ -1,0 +1,11 @@
+ja:
+  activerecord:
+    models:
+      user: "ユーザー"
+    attributes:
+      user:
+        id: "ID"
+        name: "名前"
+        postal_code: "郵便番号"
+        address: "住所"
+        bio: "自己紹介"

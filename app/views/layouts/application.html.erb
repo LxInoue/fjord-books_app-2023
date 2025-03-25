@@ -11,6 +11,26 @@
   </head>
 
   <body class="<%= params[:action] %>">
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+
+    <% unless params[:controller].start_with?("devise/") %>
+      <nav class="navbar">
+        <% if user_signed_in? %>
+          <%= t('views.navbar.logged_in_as', name: current_user.name).html_safe %>
+          <%= link_to t('views.navbar.edit_profile'), edit_user_registration_path, class: "navbar-link" %> |
+          <%= link_to t('views.navbar.logout'), destroy_user_session_path, data: { turbo_method: :delete }, class: "navbar-link" %>
+        <% else %>
+          <%= link_to t('views.navbar.sign_up'), new_user_registration_path, class: "navbar-link" %> |
+          <%= link_to t('views.navbar.login'), new_user_session_path, class: "navbar-link" %>
+        <% end %>
+      </nav>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
