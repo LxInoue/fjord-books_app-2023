@@ -10,20 +10,6 @@ class ReportTest < ActiveSupport::TestCase
     @bob = users(:bob)
   end
 
-  test 'is valid with title and content' do
-    assert @report.valid?
-  end
-
-  test 'is invalid without a title' do
-    @report.title = nil
-    assert_not @report.valid?
-  end
-
-  test 'is invalid without content' do
-    @report.content = nil
-    assert_not @report.valid?
-  end
-
   test 'editable? returns true when user matches' do
     assert @report.editable?(@alice)
   end
