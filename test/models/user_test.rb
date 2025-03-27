@@ -3,7 +3,7 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  test "name_or_emailは名前またはメールを返す" do
+  test "name_or_email returns name if present, otherwise email" do
     alice = users(:alice)
     bob = users(:bob)
     bob.name = ''
