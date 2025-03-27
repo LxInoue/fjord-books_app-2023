@@ -10,41 +10,41 @@ class ReportTest < ActiveSupport::TestCase
     @bob = users(:bob)
   end
 
-  test "is valid with title and content" do
+  test 'is valid with title and content' do
     assert @report.valid?
   end
 
-  test "is invalid without a title" do
+  test 'is invalid without a title' do
     @report.title = nil
     assert_not @report.valid?
   end
 
-  test "is invalid without content" do
+  test 'is invalid without content' do
     @report.content = nil
     assert_not @report.valid?
   end
 
-  test "editable? returns true when user matches" do
+  test 'editable? returns true when user matches' do
     assert @report.editable?(@alice)
   end
 
-  test "editable? returns false when user does not match" do
+  test 'editable? returns false when user does not match' do
     assert_not @report.editable?(@bob)
   end
 
-  test "created_on returns the date part of created_at" do
+  test 'created_on returns the date part of created_at' do
     assert_equal @report.created_at.to_date, @report.created_on
   end
 
-  test "saves links to existing report IDs" do
+  test 'saves links to existing report IDs' do
     @report.content = "http://localhost:3000/reports/#{@mentioned_report.id}"
     @report.save
 
     assert_includes @report.mentioning_reports, @mentioned_report
   end
 
-  test "does not save links to non-existent report IDs" do
-    @report.content = "http://localhost:3000/reports/99999"
+  test 'does not save links to non-existent report IDs' do
+    @report.content = 'http://localhost:3000/reports/99999'
     @report.save
 
     assert_empty @report.mentioning_reports
