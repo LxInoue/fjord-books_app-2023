@@ -4,3 +4,7 @@ alice_report:
   user: alice
   title: SampleReport
   content: This is a sample report by Alice.
+bob_report:
+  user: bob
+  title: Bob's Report
+  content: This is a sample report by Bob.
