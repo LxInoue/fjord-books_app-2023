@@ -213,7 +213,7 @@ ja:
     comment:
       notice_create: "%{name}が投稿されました。"
       alert_create_failed: "コメントの投稿に失敗しました。"
-      alert_no_permission: "削除権限がありません。"
+      alert_no_permission: "操作する権限がありません。"
       alert_no_commentable: "コメント対象が見つかりません。"
   layouts:
     application:
