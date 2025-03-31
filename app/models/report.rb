@@ -41,7 +41,7 @@ class Report < ApplicationRecord
 
       mentioned_report_ids = content.scan(%r{http://localhost:3000/reports/(\d+)}).flatten.map(&:to_i)
       mentioned_reports = Report.where(id: mentioned_report_ids)
-      
+
       mentioned_reports.each do |mentioned_report|
         ReportMention.create!(mentioning_report: self, mentioned_report: mentioned_report)
       end
