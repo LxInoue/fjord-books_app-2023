@@ -55,9 +55,9 @@ class ReportsController < ApplicationController
   end
 
   def ensure_owner
-    unless @report.user == current_user
-      redirect_to reports_path, alert: t('controllers.common.alert_no_permission')
-    end
+    return if @report.user == current_user
+
+    redirect_to reports_path, alert: t('controllers.common.alert_no_permission')
   end
 
   # Only allow a list of trusted parameters through.
