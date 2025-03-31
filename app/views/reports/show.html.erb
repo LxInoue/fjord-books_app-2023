@@ -18,6 +18,7 @@
 </nav>
 
 <h2><%= t('shared.mentions.title') %></h2>
+<% mentioned_reports = @report.mentioned_reports.order(created_at: :desc) %>
 <% if @report.mentioned_reports.any? %>
   <ul>
     <% @report.mentioned_reports.each do |mentioning_report| %>
