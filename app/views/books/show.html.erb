@@ -10,3 +10,25 @@
 
   <%= button_to t('views.common.destroy', name: Book.model_name.human.downcase), @book, method: :delete %>
 </nav>
+
+<h3><%= Comment.model_name.human %></h3>
+<%= form_with(model: [@book, Comment.new]) do |form| %>
+  <div>
+    <%= form.text_area :content, required: true, placeholder: t('views.comments.placeholder') %>
+  </div>
+  <div>
+    <%= form.submit t('views.comments.submit_button') %>
+  </div>
+<% end %>
+
+<ul>
+  <% @book.comments.each do |comment| %>
+    <li>
+      <strong><%= comment.user&.name.presence || comment.user&.email || t('views.common.deleted_user_name') %></strong> (<%= comment.created_at.to_fs(:db) %>)
+      <p><%= comment.content %></p>
+      <% if comment.user == current_user %>
+        <%= button_to t('views.common.destroy', name: Comment.model_name.human), book_comment_path(@book, comment), method: :delete %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

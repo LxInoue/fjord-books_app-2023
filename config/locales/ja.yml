@@ -202,11 +202,19 @@ ja:
       previous: '‹ 前'
       next: '次 ›'
       truncate: '…'
+    comments:
+      placeholder: "コメントを入力してください"
+      submit_button: "コメントを投稿する"
   controllers:
     common:
       notice_create: "%{name}が作成されました。"
       notice_update: "%{name}が更新されました。"
       notice_destroy: "%{name}が削除されました。"
+    comment:
+      notice_create: "%{name}が投稿されました。"
+      alert_create_failed: "コメントの投稿に失敗しました。"
+      alert_no_permission: "操作する権限がありません。"
+      alert_no_commentable: "コメント対象が見つかりません。"
   layouts:
     application:
       menu: メニュー

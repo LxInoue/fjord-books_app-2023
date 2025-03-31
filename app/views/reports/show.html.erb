@@ -1,0 +1,30 @@
+<%= render @report %>
+
+<div>
+  <%= link_to t('views.common.edit', name: Report.model_name.human), edit_report_path(@report) %> |
+  <%= link_to t('views.common.back', name: Report.model_name.human), reports_path %>
+
+  <%= button_to t('views.common.destroy', name: Report.model_name.human), @report, method: :delete %>
+</div>
+
+<h3><%= Comment.model_name.human %></h3>
+<%= form_with(model: [@report, Comment.new], local: true) do |form| %>
+  <div>
+    <%= form.text_area :content, required: true, placeholder: t('views.comments.placeholder') %>
+  </div>
+  <div>
+    <%= form.submit t('views.comments.submit_button') %>
+  </div>
+<% end %>
+
+<ul>
+  <% @report.comments.each do |comment| %>
+    <li>
+      <strong><%= comment.user&.name.presence || comment.user&.email || t('views.common.deleted_user_name') %></strong> (<%= comment.created_at.to_fs(:db) %>)
+      <p><%= comment.content %></p>
+      <% if comment.user == current_user %>
+        <%= button_to t('views.common.destroy', name: Comment.model_name.human), report_comment_path(@report, comment), method: :delete %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
