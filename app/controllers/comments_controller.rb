@@ -15,13 +15,9 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @comment = Comment.find(params[:id])
-    if @comment.user == current_user
-      @comment.destroy
-      redirect_to @commentable, notice: t('controllers.common.notice_destroy', name: Comment.model_name.human)
-    else
-      redirect_to @commentable, alert: t('controllers.comment.alert_no_permission')
-    end
+    @comment = current_user.comments.find(params[:id])
+    @comment.destroy
+    redirect_to @commentable, notice: t('controllers.common.notice_destroy', name: Comment.model_name.human)
   end
 
   private
