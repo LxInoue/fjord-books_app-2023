@@ -16,3 +16,18 @@
     <%= button_to t('views.common.destroy', name: Report.model_name.human.downcase), @report, method: :delete %>
   <% end %>
 </nav>
+
+<h2><%= t('reports.mentions.title') %></h2>
+<% mentioned_reports = @report.mentioned_reports.order(created_at: :desc) %>
+<% if @report.mentioned_reports.any? %>
+  <ul>
+    <% @report.mentioned_reports.each do |mentioning_report| %>
+      <li>
+        <%= link_to mentioning_report.title, report_path(mentioning_report) %>
+        <%= t('reports.mentions.created_on', date: mentioning_report.created_at.strftime('%Y/%m/%d')) %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p><%= t('reports.mentions.no_mentions') %></p>
+<% end %>

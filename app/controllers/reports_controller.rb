@@ -1,15 +1,14 @@
 # frozen_string_literal: true
 
 class ReportsController < ApplicationController
-  before_action :set_report, only: %i[edit update destroy]
+  before_action :set_report, only: %i[show]
+  before_action :set_own_report, only: %i[edit update destroy]
 
   def index
     @reports = Report.includes(:user).order(id: :desc).page(params[:page])
   end
 
-  def show
-    @report = Report.find(params[:id])
-  end
+  def show; end
 
   # GET /reports/new
   def new
@@ -22,6 +21,7 @@ class ReportsController < ApplicationController
     @report = current_user.reports.new(report_params)
 
     if @report.save
+      @report.update_mentions
       redirect_to @report, notice: t('controllers.common.notice_create', name: Report.model_name.human)
     else
       render :new, status: :unprocessable_entity
@@ -30,6 +30,7 @@ class ReportsController < ApplicationController
 
   def update
     if @report.update(report_params)
+      @report.update_mentions
       redirect_to @report, notice: t('controllers.common.notice_update', name: Report.model_name.human)
     else
       render :edit, status: :unprocessable_entity
@@ -45,6 +46,10 @@ class ReportsController < ApplicationController
   private
 
   def set_report
+    @report = Report.find(params[:id])
+  end
+
+  def set_own_report
     @report = current_user.reports.find(params[:id])
   end
 
