@@ -12,7 +12,7 @@
 </nav>
 
 <h3><%= Comment.model_name.human %></h3>
-<%= form_with(model: [@book, Comment.new], local: true) do |form| %>
+<%= form_with(model: [@book, Comment.new]) do |form| %>
   <div>
     <%= form.text_area :content, required: true, placeholder: t('views.comments.placeholder') %>
   </div>
