@@ -3,10 +3,11 @@
 class ReportsController < ApplicationController
   before_action :set_report, only: %i[show edit update destroy]
   before_action :ensure_owner, only: %i[edit update destroy]
+  PAGINATES_PER = 10
 
   # GET /reports
   def index
-    @reports = Report.all
+    @reports = Report.order(created_at: :desc).page(params[:page]).per(PAGINATES_PER)
   end
 
   # GET /reports/1
