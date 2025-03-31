@@ -34,4 +34,17 @@ class Report < ApplicationRecord
   def created_on
     created_at.to_date
   end
+
+  def update_mentions
+    transaction do
+      report_mentions_as_source.destroy_all
+
+      mentioned_report_ids = content.scan(%r{http://localhost:3000/reports/(\d+)}).flatten.map(&:to_i)
+      mentioned_reports = Report.where(id: mentioned_report_ids)
+      
+      mentioned_reports.each do |mentioned_report|
+        ReportMention.create!(mentioning_report: self, mentioned_report: mentioned_report)
+      end
+    end
+  end
 end

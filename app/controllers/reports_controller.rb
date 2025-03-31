@@ -22,7 +22,7 @@ class ReportsController < ApplicationController
     @report = current_user.reports.new(report_params)
 
     if @report.save
-      update_mentions(@report)
+      @report.update_mentions
       redirect_to @report, notice: t('controllers.common.notice_create', name: Report.model_name.human)
     else
       render :new, status: :unprocessable_entity
@@ -31,7 +31,7 @@ class ReportsController < ApplicationController
 
   def update
     if @report.update(report_params)
-      update_mentions(@report)
+      @report.update_mentions
       redirect_to @report, notice: t('controllers.common.notice_update', name: Report.model_name.human)
     else
       render :edit, status: :unprocessable_entity
@@ -41,7 +41,6 @@ class ReportsController < ApplicationController
   def destroy
     @report.destroy
 
-    update_mentions(@report)
     redirect_to reports_url, notice: t('controllers.common.notice_destroy', name: Report.model_name.human)
   end
 
@@ -53,16 +52,5 @@ class ReportsController < ApplicationController
 
   def report_params
     params.require(:report).permit(:title, :content)
-  end
-
-  def update_mentions(report)
-    report.report_mentions_as_mentioning.destroy_all
-
-    mentioned_report_ids = report.content.scan(%r{http://localhost:3000/reports/(\d+)}).flatten.map(&:to_i)
-    mentioned_reports = Report.where(id: mentioned_report_ids)
-
-    mentioned_reports.each do |mentioned_report|
-      ReportMention.create!(mentioning_report: report, mentioned_report: mentioned_report)
-    end
   end
 end
